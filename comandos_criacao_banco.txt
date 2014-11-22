@@ -1,0 +1,4 @@
+rails generate model Perfil nome:string foto:text sobre:text email:text senha:text
+rails generate model Post texto:string imagem:string
+rails generate model Comentario texto:string
+rails generate model Grupo nome:string descricao:string foto:string
