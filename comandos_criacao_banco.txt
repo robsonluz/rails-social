@@ -4,4 +4,8 @@ rails generate model Comentario texto:string
 rails generate model Grupo nome:string descricao:string foto:string
 
 
+rails generate migration AddPerfilRefToPosts perfil:references
+
+
+
 rails generate controller register save

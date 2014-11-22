@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122013034) do
+ActiveRecord::Schema.define(version: 20141122021101) do
 
   create_table "comentarios", force: true do |t|
     t.string   "texto"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20141122013034) do
     t.string   "imagem"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "perfil_id"
   end
+
+  add_index "posts", ["perfil_id"], name: "index_posts_on_perfil_id"
 
 end

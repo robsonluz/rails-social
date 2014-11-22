@@ -1,5 +1,5 @@
 class RegisterController < ApplicationController
-	Rails.logger = Logger.new(STDOUT)
+
 
   def save
 =begin
@@ -12,10 +12,35 @@ class RegisterController < ApplicationController
   	perfil.save
 =end
 
+
+	
+=begin
   	perfis = Perfil.all
 
   	for perfil in perfis
   		print perfil.nome
   	end
+=end
+
+
+	perfil = Perfil.find(1)
+	print perfil.posts
+	perfil.posts.each do |post|
+		print post.texto
+	end
+
+=begin 
+	#novo post com perfil associaco
+	perfil = Perfil.find(1)
+
+	post = Post.new()
+	post.texto = "Primeiro post"
+	post.perfil = perfil
+
+	post.save
+	
+
+=end
+
   end
 end
