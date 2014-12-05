@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205224643) do
+ActiveRecord::Schema.define(version: 20141205225604) do
 
   create_table "comentarios", force: true do |t|
     t.string   "texto"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 20141205224643) do
   create_table "grupos_perfils", id: false, force: true do |t|
     t.integer "perfil_id", null: false
     t.integer "grupo_id",  null: false
+  end
+
+  create_table "perfil_amigo", id: false, force: true do |t|
+    t.integer "perfil_a_id", null: false
+    t.integer "perfil_b_id", null: false
   end
 
   create_table "perfils", force: true do |t|
