@@ -7,5 +7,34 @@ rails generate model Grupo nome:string descricao:string foto:string
 rails generate migration AddPerfilRefToPosts perfil:references
 
 
+rails generate migration AddPostRefToComentarios post:references
+rails generate migration AddPerfilRefToComentarios perfil:references
+
+
+
+//Foi alterado o arquivo do migration para alterar o nome da tabela
+rails generate migration CreateJoinTablePostPerfil post perfil
+
+
+rails generate migration CreateJoinTablePerfilGrupo perfil grupo
+
+rails generate migration AddGrupoRefToPosts grupo:references
+
+
+
 
 rails generate controller register save
+
+
+rails generate controller stream show
+
+rails generate controller login login
+
+
+
+//depois de rodar o generate tem que aplicar o rake para atualizar o banco
+rake db:migrate
+
+
+http://localhost:3000/stream/create.json?texto=cadastrando
+http://localhost:3000/stream/index.json

@@ -1,17 +1,17 @@
 class RegisterController < ApplicationController
-
+  respond_to :json
 
   def save
-=begin
-  	perfil = Perfil.new()
-  	perfil.nome = "Robson Joao"
-  	perfil.email = "robson.luz@bomjesus.br"
-  	perfil.senha = "12345"
-  	perfil.foto = "default.jpg"
 
-  	perfil.save
-=end
+  	@perfil = Perfil.new()
+  	@perfil.nome = params[:nome]
+  	@perfil.email = params[:email]
+  	@perfil.senha = params[:senha]
+  	@perfil.foto = "default.jpg"
 
+  	@perfil.save
+
+	respond_with(@perfil)
 
 	
 =begin
@@ -23,24 +23,27 @@ class RegisterController < ApplicationController
 =end
 
 
+=begin
 	perfil = Perfil.find(1)
 	print perfil.posts
 	perfil.posts.each do |post|
 		print post.texto
 	end
+=end
 
-=begin 
+
+=begin
 	#novo post com perfil associaco
 	perfil = Perfil.find(1)
 
 	post = Post.new()
-	post.texto = "Primeiro post"
+	post.texto = "Quarto post"
 	post.perfil = perfil
 
 	post.save
-	
+=end	
 
-=end
+
 
   end
 end

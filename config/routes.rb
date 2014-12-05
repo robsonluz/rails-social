@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'login/login'
+  #post 'login/login'
+
+  get 'stream/index'
+  get 'stream/create'
+  get 'stream/createComentario'
+  get 'stream/curtir'
+
   get 'register/save'
 
   get 'welcome/index'
