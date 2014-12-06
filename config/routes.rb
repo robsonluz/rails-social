@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'perfil/adicionarAmigo'
+
   get 'login/login'
   #post 'login/login'
 

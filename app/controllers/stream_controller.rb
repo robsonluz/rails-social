@@ -68,8 +68,12 @@ class StreamController < ApplicationController
   	post = Post.find(params[:postId])
   	perfil = Perfil.find(session[:perfilLogado])
 
-  	post.curtidas << perfil
-  	post.save
+
+	unless post.curtidas.include?(perfil)
+		post.curtidas << perfil
+	  	post.save
+	end		
+  	
 
 	@message = Hash.new 
 	@message["message"] = "ok"

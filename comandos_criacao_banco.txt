@@ -23,6 +23,7 @@ rails generate migration AddGrupoRefToPosts grupo:references
 
 //Amigos, precisa mudar no arquivo migration
 rails generate migration CreateJoinTablePerfilAmigo perfil perfil
+rails generate migration CreateJoinTablePerfilAmigoAprovacao perfil perfil
 
 
 rails generate controller register save
@@ -31,6 +32,9 @@ rails generate controller register save
 rails generate controller stream show
 
 rails generate controller login login
+
+
+rails generate controller perfil adicionarAmigo
 
 
 
