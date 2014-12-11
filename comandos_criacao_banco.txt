@@ -36,6 +36,9 @@ rails generate controller login login
 
 rails generate controller perfil adicionarAmigo
 
+rails generate controller grupo index
+rails generate controller grupo create
+
 
 
 //depois de rodar o generate tem que aplicar o rake para atualizar o banco

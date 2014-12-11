@@ -5,14 +5,11 @@ class StreamController < ApplicationController
   	
 	perfilId = session[:perfilLogado]
 
-	session[:perfilLogado] = 2;
-	print "perfil: "
-	print perfilId
 	if(perfilId)
 
 
 
-	  	@posts = Post.where(perfil_id: perfilId).order("created_at DESC")
+	  	@posts = Post.where(perfil_id: perfilId, grupo_id: nil).order("created_at DESC")
 
 	  	render :json => @posts.to_json(
 	  		  
@@ -39,6 +36,10 @@ class StreamController < ApplicationController
 
 		@post = Post.new()
 		@post.texto = params[:texto]
+		if(params[:grupoId])
+			grupo = Grupo.find(params[:grupoId])
+			@post.grupo = grupo
+		end
 		@post.perfil = perfil
 
 		@post.save

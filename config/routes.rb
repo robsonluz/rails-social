@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  
+  get 'grupo/create'
+  get 'grupo/index'
+  get 'grupo/entrar'
+  get 'grupo/sair'
+  get 'grupo/lista'
+  get 'grupo/posts'
+
+
+
   get 'perfil/adicionarAmigo'
 
   get 'login/login'
