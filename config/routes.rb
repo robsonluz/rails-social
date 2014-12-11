@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   get 'grupo/posts'
 
 
-
+  get 'perfil/amigos'
   get 'perfil/adicionarAmigo'
+  get 'perfil/aceitarAmizade'
+  get 'perfil/naoAceitarAmizade'
+  get 'perfil/removerAmizade'
+  get 'perfil/solicitacoesAmizade'
+  
 
   get 'login/login'
   #post 'login/login'

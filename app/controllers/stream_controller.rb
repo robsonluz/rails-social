@@ -7,8 +7,6 @@ class StreamController < ApplicationController
 
 	if(perfilId)
 
-
-
 	  	@posts = Post.where(perfil_id: perfilId, grupo_id: nil).order("created_at DESC")
 
 	  	render :json => @posts.to_json(
