@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'perfil/naoAceitarAmizade'
   get 'perfil/removerAmizade'
   get 'perfil/solicitacoesAmizade'
+  get 'perfil/pessoas'
   
 
   get 'login/login'

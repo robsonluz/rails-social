@@ -1,6 +1,6 @@
 class PerfilController < ApplicationController
 	respond_to :json
-	
+
 	def adicionarAmigo
 		perfil = Perfil.find(session[:perfilLogado])
 		amigo = Perfil.find(params[:perfilId])
@@ -14,7 +14,8 @@ class PerfilController < ApplicationController
 
 		@message = Hash.new 
 		@message["message"] = "ok"
-		respond_with(@message)  
+
+		render :json => @message.to_json(), :callback => params['callback']
 	end
 
 	def solicitacoesAmizade
@@ -26,6 +27,11 @@ class PerfilController < ApplicationController
 		perfil = Perfil.find(session[:perfilLogado])
 		render :json => perfil.amigos.to_json(), :callback => params['callback']
 	end
+
+	def pessoas
+		perfils = Perfil.all()
+		render :json => perfils.to_json(), :callback => params['callback']
+	end	
 
 	def aceitarAmizade
 		perfil = Perfil.find(session[:perfilLogado])
