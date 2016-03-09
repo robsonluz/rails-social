@@ -1,0 +1,29 @@
+Host base: http://www.robsonluz.com.br/
+
+* Para criar um Usuario:
+
+POST: {host}register/save.json
+Parâmetros:
+- nome
+- email
+- senha
+
+
+* Login
+
+POST: {host}login/login.json
+Parâmetros:
+- email
+- senha
+
+
+* Stream
+
+GET: {host}stream/index.json
+
+
+* Criar Post
+
+POST: {host}stream/create.json
+Parâmetros:
+- texto

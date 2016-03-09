@@ -17,15 +17,16 @@ Rails.application.routes.draw do
   get 'perfil/pessoas'
   
 
-  get 'login/login'
-  #post 'login/login'
+  #get 'login/login'
+  post 'login/login'
 
   get 'stream/index'
-  get 'stream/create'
-  get 'stream/createComentario'
+  post 'stream/create'
+  post 'stream/createComentario'
   get 'stream/curtir'
 
-  get 'register/save'
+  #get 'register/save'
+  post 'register/save'
 
   get 'welcome/index'
 

@@ -11,7 +11,7 @@ class LoginController < ApplicationController
   		print @perfil.id
 
   		session[:perfilLogado] = @perfil.id
-		  respond_with(@perfil)  		
+		  respond_with @perfil, :location => root_url 		
 =begin
   		@message = Hash.new 
   		@message["message"] = "E-mail e ou senha inválidos!"
@@ -22,7 +22,7 @@ class LoginController < ApplicationController
 
 		@message = Hash.new 
 		@message["message"] = "E-mail e ou senha inválidos!"
-  		respond_with(@message)
+  		respond_with @message, :location => root_url
   	end
   	
   end

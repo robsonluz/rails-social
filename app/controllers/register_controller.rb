@@ -3,16 +3,23 @@ class RegisterController < ApplicationController
 
   def save
 
-  	@perfil = Perfil.new()
-  	@perfil.nome = params[:nome]
-  	@perfil.email = params[:email]
-  	@perfil.senha = params[:senha]
-  	@perfil.foto = "default.jpg"
+  	p = Perfil.where(email: params[:email]).first
 
-  	@perfil.save
+  	if(p) 
+		@message = Hash.new 
+		@message["message"] = "Usuário já cadastrado!"
+  		respond_with @message, :location => root_url
+	else
+	  	@perfil = Perfil.new()
+	  	@perfil.nome = params[:nome]
+	  	@perfil.email = params[:email]
+	  	@perfil.senha = params[:senha]
+	  	@perfil.foto = "default.jpg"
 
-	respond_with(@perfil)
+	  	@perfil.save
 
+		respond_with @perfil, :location => root_url
+	end
 	
 =begin
   	perfis = Perfil.all
